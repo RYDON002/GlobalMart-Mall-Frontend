@@ -271,8 +271,16 @@ topnavBtns.forEach(btn => {
 });
 
 document.getElementById('cartBtn').onclick = () => {
-  alert('Next step: Checkout page (we build next)');
+  window.location.href = 'checkout.html';
 };
+
+// Logout for mobile sidebar
+const logoutBtnMobile = document.getElementById('logoutBtnMobile');
+if (logoutBtnMobile) {
+  logoutBtnMobile.onclick = function() {
+    document.getElementById('logoutBtn').click();
+  };
+}
 
 /* =======================
    SIDEBAR
@@ -368,6 +376,24 @@ function openBuyModal(p) {
 }
 
 closeBuyModal.onclick = () => buyModal.classList.add('hidden');
+
+function updateCartCount(){
+  let cart = JSON.parse(localStorage.getItem('megamall_cart')||'[]');
+  document.getElementById('cartCount').textContent =
+    cart.reduce((a,b)=>a+b.qty,0);
+}
+
+function addToCart(p){
+  let cart = JSON.parse(localStorage.getItem('megamall_cart')||'[]');
+  const found = cart.find(x=>x.id===p.id);
+  if(found) found.qty++;
+  else cart.push({...p, qty:1});
+  localStorage.setItem('megamall_cart', JSON.stringify(cart));
+  updateCartCount();
+}
+
+updateCartCount();
+
 
 /* =======================
    INITIALIZE

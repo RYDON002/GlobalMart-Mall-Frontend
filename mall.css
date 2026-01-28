@@ -1,3 +1,12 @@
+@media (max-width: 768px) {
+  .logout-desktop {
+    display: none !important;
+  }
+  .logout-mobile-li {
+    display: block !important;
+    margin-top: 16px;
+  }
+}
 /* =====================
    RESET & VARIABLES
 ===================== */
@@ -298,6 +307,13 @@ body {
   gap: 20px;
 }
 
+@media (max-width: 600px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+}
+
 .card {
   background: #fff;
   border-radius: 14px;
@@ -363,14 +379,22 @@ body {
   color: var(--primary);
 }
 
+@media (max-width: 768px) {
+  .cart-svg {
+    width: 24px !important;
+    height: 24px !important;
+  }
+  .cart-icon {
+    gap: 2px;
+  }
+}
 /* SVG HOLDER */
 .cart-svg {
   position: relative;
-  width: 40px;
-  height: 40px;
+  width: 35px;
+  height: 30px;
 }
 
-/* FORCE SVG VISIBILITY */
 .cart-svg svg {
   width: 100%;
   height: 100%;
@@ -392,7 +416,7 @@ body {
 
 /* CART TEXT */
 .cart-text {
-  font-size: 14px;
+  font-size: 15px;
   font-weight: 600;
   color: #fff;
 }
@@ -473,8 +497,8 @@ body {
 
   background-image:
     linear-gradient(
-      rgba(0,0,0,0.15),
-      rgba(0,0,0,0.15)
+      rgba(0,0,0,0.03),
+      rgba(0,0,0,0.03)
     ),
     url("background.jpg");
 

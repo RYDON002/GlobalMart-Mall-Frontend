@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Checkout | GlobalMart</title>
+  <link rel="stylesheet" href="checkout.css">
+</head>
+<body>
+
+<header class="checkout-header">
+  <div class="logo">GlobalMart</div>
+  <div class="secure">🔒 Secure Checkout</div>
+</header>
+
+<main class="checkout-wrap">
+
+  <!-- LEFT -->
+  <section class="checkout-left">
+    <h2>Order Summary</h2>
+    <div id="cartItems"></div>
+
+    <h3>Shipping Method</h3>
+    <div class="shipping">
+      <label><input type="radio" name="ship" value="0" checked> Free Shipping (5–7 days) — $0</label>
+      <label><input type="radio" name="ship" value="5"> Standard Shipping (3–5 days) — $5</label>
+      <label><input type="radio" name="ship" value="15"> Express Shipping (1–2 days) — $15</label>
+    </div>
+  </section>
+
+  <!-- RIGHT -->
+  <aside class="checkout-right">
+    <h2>Payment Summary</h2>
+    <div class="summary-row"><span>Subtotal</span><span id="subTotal">$0</span></div>
+    <div class="summary-row"><span>Shipping</span><span id="shipTotal">$0</span></div>
+    <div class="summary-row"><span>Tax</span><span id="taxTotal">$0</span></div>
+    <div class="summary-row total"><span>Total</span><span id="grandTotal">$0</span></div>
+    <button id="placeOrderBtn">Place Order</button>
+  </aside>
+
+</main>
+
+<script src="checkout.js"></script>
+</body>
+</html>
